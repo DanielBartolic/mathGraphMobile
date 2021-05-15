@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>Graph Calculator</title>
+        <script src="math.min.js"></script>
+        <script src="jquery.min.js"></script>
+        <script src="jquery-ui.min.js"> </script>
+        
+        <!-- <script src="nerdamer/nerdamer.core.js"></script>  -->
+        <!-- LOAD ADD-ONS. These files contain extended functions. See documentation -->
+        <!-- again assuming you've saved the files in root -->
+        <!-- <script src="nerdamer/Algebra.js"></script>
+        <script src="nerdamer/Calculus.js"></script>
+        <script src="nerdamer/Solve.js"></script> -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="inputStyle.css">
+        <link rel="stylesheet" type="text/css" href="menu.css">
+    </head>
+    <body>
+
+        
+        <div class="column1">
+            <div class="readme">read <a  href="https://github.com/DanielBartolic/mathgraph/blob/main/readme.rtf" target="_blank">instructions</a></div>
+
+            <!-- <div id="mydiv">
+
+
+                <div ondblclick="closeInputFunction()" id="mydivheader">double click</div>
+              
+                <div class="input" id="inputDisplay">
+                    <div class="btnrow"> <button type="button" onclick="addFunctionInput()">+</button> <button type="button" onclick="removeFunctionInput()">-</button> </div>
+                    <div class="row1" id="fx"><input class="textfield" placeholder="function f(x)" id="inputFieldFunctionFX">
+                        <label class="switch">
+                            <input type="checkbox" id="cbShowFX" onclick="showFX()" checked>
+                            <span class="slider"></span>
+                          </label>
+                    </div>
+                    <div class="row1" id="gx"><input class="textfield" placeholder="function g(x)" id="inputFieldFunctionGX">
+                        <label class="switch">
+                            <input type="checkbox" id="cbShowGX" onclick="showGX()" checked>
+                            <span class="slider"></span>
+                          </label>
+                    </div>
+                    <div class="row1" id="hx"><input class="textfield" placeholder="function h(x)" id="inputFieldFunctionHX">
+                        <label class="switch">
+                            <input type="checkbox" id="cbShowHX" onclick="showHX()" checked>
+                            <span class="slider"></span>
+                          </label>
+                    </div>
+                    <div class="row1" id="ix"><input class="textfield" placeholder="function i(x)" id="inputFieldFunctionIX">
+                        <label class="switch">
+                            <input type="checkbox" id="cbShowIX" onclick="showIX()" checked>
+                            <span class="slider"></span>
+                          </label>
+                    </div>
+                    <div class="btnrow"> <button type="button" onclick="addVariableInput()">+</button> <button type="button" onclick="removeVariableInput()">-</button> </div>
+                    <div class="row2" id="rangeK" > variable k : <input class="range" type="range" min=-100 max=100 value=0 id="range" oninput="changeVariableK(this.value/10)"><span id="outputK"></span></div>
+                    <div class="row2" id="rangeL"> variable l : <input class="range" type="range" min=-100 max=100 value=0 id="range" oninput="changeVariableL((this.value/100))"><span id="outputL"></span></div>
+                    <div class="row3" > show grid : 
+                        <label class="switch">
+                            <input type="checkbox" id="cbShowGrid" onclick="cbGridFunction()" checked>
+                            <span class="slider"></span>
+                          </label>
+                     </div>
+                    <div class="row3" > coordinate size : <input class="range" type="range" min=1 max=6 value=3 id="rangeScale" oninput="sliderChange(this.value)"> </div>
+
+                </div>  
+            </div>    -->
+
+            <div class="menu" id="menuid">
+
+                <div class="input" id="inputDisplay">
+                    <div class="column">
+                        <div class="row1" id="fx"><input class="textfield" placeholder="function f(x)" id="inputFieldFunctionFX">
+                            <label class="switch">
+                                <input type="checkbox" id="cbShowFX" onclick="showFX()" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="row1" id="gx"><input class="textfield" placeholder="function g(x)" id="inputFieldFunctionGX">
+                            <label class="switch">
+                                <input type="checkbox" id="cbShowGX" onclick="showGX()" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="row1" id="hx"><input class="textfield" placeholder="function h(x)" id="inputFieldFunctionHX">
+                            <label class="switch">
+                                <input type="checkbox" id="cbShowHX" onclick="showHX()" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="row1" id="ix"><input class="textfield" placeholder="function i(x)" id="inputFieldFunctionIX">
+                            <label class="switch">
+                                <input type="checkbox" id="cbShowIX" onclick="showIX()" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <!-- <div class="btnrow"> <button type="button" onclick="addFunctionInput()">+</button> <button type="button" onclick="removeFunctionInput()">-</button> </div> -->
+                </div>
+
+                <div class="column">
+                    <!-- <div class="btnrow"> <button type="button" onclick="addVariableInput()">+</button> <button type="button" onclick="removeVariableInput()">-</button> </div> -->
+                    <div class="rangeColumn">
+                        <div class="col2" id="rangeK" ><input class="range" type="range" min=-100 max=100 value=0 id="range" oninput="changeVariableK(this.value/10)"><p class="varrange">k</p></div>
+                        <div class="col2" id="rangeL"> <input class="range" type="range" min=-100 max=100 value=0 id="range" oninput="changeVariableL((this.value/100))"><p class="varrange">l</p></div>
+                        <div class="col2" ><input class="range" type="range" min=1 max=6 value=3 id="rangeScale" oninput="sliderChange(this.value)"></div>
+                        
+                    </div>
+                    <!-- <div class="row3" > grid : 
+                        <label class="switch">
+                            <input type="checkbox" id="cbShowGrid" onclick="cbGridFunction()" checked>
+                            <span class="slider"></span>
+                          </label>
+                     </div> -->
+
+                    
+                </div>
+
+                </div>
+
+            </div>
+
+            <div class="navMenu" id="navMenuid">
+                <span id="outputK"></span>
+                <span id="outputL"></span>
+
+                <label for="toggleMenu">
+                    <div class="containerMenu" onclick="myFunction(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </label>
+
+                <input type="checkbox" id="toggleMenu" onclick="openCloseMenu()"/>
+            </div>
+                     
+            
+
+            <div class="canvas" id="canvasdiv" onwheel="sliderChange(0,event)">
+                <canvas width="2400" height="2400" id="myCanvas"></canvas> 
+            </div>
+        
+
+        
+                
+
+        </div>
+            
+
+        <script src="myScript.js"></script>
+        <script src="drag.js"></script>
+        <script src="menuScript.js"></script>
+        <script>$('#canvasdiv').draggable();</script>
+        
+    </body>
+</html>
