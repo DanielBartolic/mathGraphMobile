@@ -35,8 +35,8 @@ button:hover{
     transform: rotate(270deg);
     -webkit-appearance: none;
     
-    width: 240%;
-    height: 20px;
+    width: 135%;
+    height: 40px;
     background: #292934;
     border: #292934 solid 2px;
     outline: none;
@@ -52,15 +52,15 @@ button:hover{
   .range::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     background: white;
     cursor: pointer;
   }
   
   .range::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     background: white;
     cursor: pointer;
   }

@@ -9,6 +9,10 @@
     z-index: 11;
 } */
 
+.input{
+    padding-top: 10px;
+}
+
 #canvasdiv {
   position: absolute;
   z-index: 8;

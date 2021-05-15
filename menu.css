@@ -4,15 +4,15 @@
 
 .varrange{
   position: relative;
-  top: 40px;
+  top: 36px;
   left: 40px;
 
 }
 
 .col2{
     float: left;
-  width: 23%;
-  margin-top: 30%;
+  width: 26%;
+  margin-top: 15%;
   /* padding-right: 1px; */
   /* padding: 10px; */
 }
