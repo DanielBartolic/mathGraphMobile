@@ -98,7 +98,7 @@ function drawGrid(){
   if(grid){
   for(var i=0; i<=num_lines_x; i++) {
     c.beginPath();
-    c.lineWidth = 1;
+    c.lineWidth = 1.5;
     c.strokeStyle = "#ccc";
     
     if(i == num_lines_x) {
@@ -122,7 +122,7 @@ function drawGrid(){
 function drawAxis(){
   var i = x_axis_distance_grid_lines;
   c.beginPath();
-  c.lineWidth = 1.5;
+  c.lineWidth = 2.5;
   c.strokeStyle = "#000000";
   c.moveTo(0, grid_size*i+0.5);
   c.lineTo(canvas_width, grid_size*i+0.5);
@@ -153,7 +153,7 @@ yMax = 1 * coordinateSystemSizeY;
 
 
     c.beginPath();
-    c.lineWidth = 2.5;
+    c.lineWidth = 4;
     c.strokeStyle = color;
 
     for(i = 0; i < n; i++){
@@ -226,6 +226,7 @@ function drawLimits(val){
             if(dist > canvas_height/3){
               c.strokeStyle = "green";
               c.beginPath();
+              c.lineWidth = 4;
               c.setLineDash([5, 15]);
               c.moveTo(previousX,previousY);
               c.lineTo(xPixel,yPixel);

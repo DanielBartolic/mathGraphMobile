@@ -1,31 +1,41 @@
-.columnRange{
+.rangeColumn{
     box-sizing: border-box;
+    padding-top: 55px;
 }
 
 .varrange{
   position: relative;
-  top: 36px;
-  left: 40px;
-
+  top: 80px;
+  left: 94px;
+font-size: 35px;
+}
+.varrange2{
+  position: relative;
+  top: 80px;
+  left: 97px;
+font-size: 35px;
 }
 
 .col2{
     float: left;
-  width: 26%;
+  width: 23%;
   margin-top: 15%;
   /* padding-right: 1px; */
   /* padding: 10px; */
 }
 .navMenu {
+  font-size: 35px;
     z-index: 20;
     position: fixed;
     bottom: 0;
     width: 100%;
-    border: 1px solid black;
     text-align: right;
-    height: 50px;
+    padding-right: 40px;
+    padding-top: 25px;
+    height: 100px;
     line-height: 50px;
     background-color: white;
+    border-top: 4px solid black;
 }
     label {
         /* z-index: 10; */
@@ -44,19 +54,20 @@
         color: gray;
         line-height: 50px;
         display: block;
-            border-bottom: 1px solid #EAEAEB;
             margin: 0;
     }
 
     .menu {
-      border-top: 1px solid black;
+      border-top: 4px solid black;
         box-sizing: border-box;
         background-color: white;
         z-index: 20;
         /* z-index: 2; */
         /* margin: 0 30px 0 0; */
+        padding:5px;  
         text-align: center;
         width: 100%;
+        height: 450px;
         display: none;
         position: fixed;
         bottom: 50px;
@@ -65,32 +76,33 @@
     #toggleMenu {
         z-index: 10;
         display: none;
+        
     }
 
     .containerMenu {
         display: inline-block;
         cursor: pointer;
-        /* margin-top: 15px; */
+        
       }
       
       .bar1, .bar2, .bar3 {
-        width: 35px;
-        height: 5px;
+        width: 70px;
+        height: 14px;
         background-color: #333;
         margin: 6px 0;
         transition: 0.4s;
       }
       
       .change .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-9px, 6px);
+        -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+        transform: rotate(-45deg) translate(-7px, 6px);
       }
       
       .change .bar2 {opacity: 0;}
       
       .change .bar3 {
-        -webkit-transform: rotate(45deg) translate(-8px, -8px);
-        transform: rotate(45deg) translate(-8px, -8px);
+        -webkit-transform: rotate(45deg) translate(-14px, -14px);
+        transform: rotate(45deg) translate(-14px, -14px);
       }
 
       /* .grid{

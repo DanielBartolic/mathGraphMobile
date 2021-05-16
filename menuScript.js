@@ -1,14 +1,18 @@
 var navMenu = document.getElementById("navMenuid");
 function openCloseMenu(){
-    console.log("a");
+    
     var toggle = document.getElementById("toggleMenu");
     var menu = document.getElementById("menuid");
     if(toggle.checked == true){
+        navMenu.style.borderTop="none";
         menu.style.display ="block";
-        navMenu.style.border="none";
+        
+        
     }else{
+        
+        navMenu.style.borderTop="4px solid black";
         menu.style.display="none";
-        navMenu.style.border="1px solid black";
+        
     }
 }
 
