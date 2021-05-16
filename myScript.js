@@ -1,3 +1,9 @@
+function stoperror() {
+  return true;
+}
+
+window.onerror = stoperror;
+
 var canvas = document.getElementById('myCanvas'),
 fgx = document.getElementById('gx'),
 fhx = document.getElementById('hx'),
@@ -507,6 +513,8 @@ function variables(x){
 //   }
 
 // }
+
+
 
 function myFunction2(event) {
   console.log(event.deltaY);
